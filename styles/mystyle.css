@@ -1,59 +1,110 @@
 /*global*/
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
 *{
     margin:0;
     padding:0;
 }
-    
+
+/*orientation*/
+
 body {
     background-color:black;
     color:#fff ;
     font-family: 'Lato', sans-serif;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto; 
 }
 
-.container {
-    display:grid; 200px 250px;
-    grid-auto-rows: minmax(150px, auto);
-    grid-gap:20px;
+main {
+    width: 60%;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-left: auto;
+    margin-right: auto;  
 }
 
-img { 
-    max-width: 100%;
+#secondarynews {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 200px;
+    
+}
+
+/* "section / todays picks"  Note to sefl: If I put this after secondary the style won't apply */
+section img {
+    width: 100px;
+}
+
+section {
+        display:flex;
+        flex-direction: column;;
+        gap: 15px;
+        margin-right: 50px;
+        row-gap: 35px;
+}
+
+#todayspicksh2 {
+    font-size: 28px;
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.todays-picks-item { 
+    display: flex;
+    gap: 35px;
+    align-items: start;
 }
 
 /*utilities*/
 
 /*nav*/
 nav.menu {
-    display:flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
     background-color: #fff ;
     height:42px;
 }
+
 nav.menu a {
-    margin-right:20px;
+    margin-right: 20px;
 }
+
 img.logo-border {
-    height:32px;
-    padding-left:20px;
+    height: 32px;
+    padding-left: 20px;
 }
+
 img.logo-complete {
-    display:none;
+    height: 30px;
 }
+
 a.link-login {
     text-transform: uppercase;
     color:black;
     font-weight: bold;
-    font-size:12px;
+    font-size: 12px;
     text-decoration: none;
     letter-spacing: 3px;
 }
 a.link-search {
-    display:none;
+    color:black;
 }
+
 a.link-news {
-    display:none;
+    text-transform: uppercase;
+    color:black;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+    letter-spacing: 3px;
 }
 
 a.link-subs {
@@ -68,6 +119,7 @@ a.link-subs {
     transition: all 0.7s ease-in-out 0s;
     cursor: pointer;
 }
+
 a.link-subs:hover {
     box-shadow: inset 300px 0 0 0 #fc0;
     background-color: #fc0;
@@ -76,8 +128,15 @@ a.link-subs:hover {
 }
     
 a.link-menu {
-    display:none;
+    text-transform: uppercase;
+    color:black;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+    letter-spacing: 3px;
+    
 }
+
 a.link-arrows {
     color:black;
 }
@@ -86,39 +145,41 @@ a.link-arrows {
 .header-title {
     text-transform: uppercase;
     text-align: center;
-    font-size:45px;
+    font-size: 45px;
     letter-spacing: 3px;
     margin-top: 50px;
     margin-bottom: 25px;
 }
+
 .header-info {
     text-align: center;
     font-size: 18px;
     font-weight: lighter;
-    margin-bottom:25px;
-    margin-right:auto;
-    margin-left:auto;
+    margin-bottom: 25px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .bar {
     background:#fc0;
     align: center;
-    width:5%;
-    height:5px;
-    margin-top:25px;
-    margin-bottom:50px;
-    margin-right:auto;
-    margin-left:auto;
+    width: 5%;
+    height: 5px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    margin-right: auto;
+    margin-left: auto;
 }
+
 span {
 	padding: 0 5px;
 	box-shadow: inset 0 0 0 0 #fff;
 	transition: all 0.5s ease-in-out 0s;
-    text-decoration:underline;
+    text-decoration: underline;
     text-underline-offset: 2px;
-    text-decoration-thickness:2px;
+    text-decoration-thickness: 2px;
     text-decoration-color: #fc0;
-    cursor:pointer;
+    cursor: pointer;
 }
 span:hover {
     box-shadow: inset 0 -300px 0 #fc0;
@@ -132,23 +193,9 @@ span:hover {
     position: relative; /*parent*/
 }
 
-.main-news img {
-    /*( position: absolute; )child*/
-}
-
-/* main to just mirror a mobile view , when screen is minimized */
-main {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.main-news.img {
-  
-}
-
 .main-news-text {
     position: absolute;
-    top: 18.5rem;
+    top: 23rem;
     left: 25px;
 }
 
@@ -191,10 +238,10 @@ main {
 
 .secondary-news img {
     width: 100%;
-    height: 400px;
+    height: 300px;
     margin-top: 10px;
     vertical-align: middle;
-    cursor:pointer;
+    cursor: pointer;
     transition: 0.5s all ease-in-out;
 }
 
@@ -216,15 +263,17 @@ figure {
     border-bottom: solid #fc0 5px;
     transform: scaleY(1);
 }
-
+/*
 .secondary-news {
     margin-top: 15px;
+}*/
+.secondary-news {
+    position: relative;
 }
 
 .secondary-news-text {
     background-color: #fff;
     color: black;
-    
 }
 
 .secondary-news-text h3 {
@@ -241,6 +290,7 @@ figure {
     font-weight: 600;
     padding-top: 15px;
     padding-left: 23px;
+    letter-spacing: 5px;
 }
 
 .secondary-news-text a {
@@ -256,4 +306,100 @@ figure {
     padding-bottom: 20px;
 }
 
+.todays-picks-item h4 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 12px;
+}
 
+.todays-picks-itemn p {
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+.seemore a {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #fff;
+    letter-spacing: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-bottom: 20px;
+}
+.seemore a {
+	padding: 0 5px;
+	box-shadow: inset 0 0 0 0 #fff;
+	transition: all 0.5s ease-in-out 0s;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: #fc0;
+    cursor: pointer;
+}
+
+.seemore a:hover {
+    box-shadow: inset 0 -300px 0 #fc0;
+        color: black;
+        font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    main {
+        display:flex;
+        flex-direction: column;
+    }
+
+    img#logo-complete {
+        display:none;
+    }
+    
+    a.link-search {
+        display: none;
+    }
+
+    a.link-news {
+        display: none;
+    }
+    
+    a.link-menu {
+        display: none;
+    }
+
+    .main-news-text h3 {
+        font-size: 1.7rem;
+        margin-bottom: 
+
+    }
+    .main-news-text p {
+        font-size: .8rem;
+
+    }
+
+    main { 
+        display:flex;
+        flex-direction: column;;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #secondarynews {
+        display:flex;
+        flex-direction: column;;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    section { 
+        display:flex;
+        flex-direction: column;;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-left: 75px;
+    }
+}
